@@ -313,10 +313,13 @@ function resetPosition() {
     }
 }
 
-async function shuffleCards() {
+async function shuffleCards(shuffleButton) {
     /*
         Shuffle the cards in the deck.
     */
+    disableButton(shuffleButton);
+    changeText("Shuffling...", shuffleButton);
+    
     shuffleCardsNum();
     resetPosition();
 
@@ -328,6 +331,36 @@ async function shuffleCards() {
     resetZIndex(); // this line removes symmetry around the center
     await sleep(0.5);
     spreadCards();
+
+    changeText("Shuffle Cards", shuffleButton);
+    enableButton(shuffleButton);
+}
+
+function changeText(text, element) {
+    /*
+        Change the text of the element.
+        Parameters:
+            text: the text you want to change to.
+    */
+    element.innerText = text;
+}
+
+function disableButton(button) {
+    /*
+        Disable the button.
+        Parameters:
+            button: the button you want to disable.
+    */
+    button.disabled = true;
+}
+
+function enableButton(button) {
+    /*
+        Enable the button.
+        Parameters:
+            button: the button you want to enable.
+    */
+    button.disabled = false;
 }
 
 function resetZIndex() {
@@ -345,6 +378,7 @@ async function setupCards() {
     await sleep(1);
     spreadCards();
     indicator = true;
+    shuffleCardsNum();
 }
 setupCards();
 
@@ -425,13 +459,13 @@ function changeActiveStatus() {
 async function restart() {
     flipCard();
     moveto('.lgbtqia-header');
-    await fadeAll('.lgbtqia-result-container', 'out', 'top', 1000);
+    await fadeAll('.lgbtqia-result-container', 'out', 'bottom', 1000);
 
     changeActiveStatus();
 
-    fadeAll('.lgbtqia-main-text', 'in', 'bottom', 1000, 500);
-    fadeAll('.lgbtqia-btn-container', 'in', 'bottom', 1000, 500);
-    await fadeAll('.lgbtqia-cards-container', 'in', 'bottom', 1000, 500);
+    fadeAll('.lgbtqia-main-text', 'in', 'left', 1000);
+    fadeAll('.lgbtqia-btn-container', 'in', 'left', 1000);
+    await fadeAll('.lgbtqia-cards-container', 'in', 'left', 1000);
 
     resetDataset('fade');
 }

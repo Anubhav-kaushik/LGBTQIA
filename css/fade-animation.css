@@ -115,5 +115,5 @@
 }
 
 [data-fade="in"] {
-    transform: translate(100%, 100%);
+    transform: translateX(-200%);
 }
