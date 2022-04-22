@@ -1,0 +1,179 @@
+:root {
+    --primary-color: #993838;
+    --secondary-color: #FCC473;
+    --tertiary-color: #00ffd8;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+[data-color="primary"] {
+    color: var(--primary-color);
+}
+
+[data-color="secondary"] {
+    color: var(--secondary-color);
+}
+
+#lgbtqia {
+    width: 100vw;
+    min-height: 100vh;
+    background: url(../infographics/interactive-names/bg-overlay.png) no-repeat fixed center;
+    background-size: cover;
+    text-align: center;
+    margin: 0;
+    padding: 1em;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+#lgbtqia > * {
+    box-sizing: border-box;
+}
+
+.lgbtqia-main-container {
+    border-image: url(../infographics/interactive-names/border.png) 30 / 19px round;
+}
+
+.lgbtqia-header {
+    min-height: 80px;
+    max-height: 100px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lgbtqia-header img {
+    max-height: 60px;
+    z-index: 1;
+}
+
+.lgbtqia-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: min(50em, 90%);
+    margin: 0 auto;
+}
+
+.lgbtqia-text-container > * {
+    z-index: 1;
+}
+
+.lgbtqia-text-container .lgbtqia-divider-container > img {
+    width: 95%;
+    display: block;
+    margin: 0 auto;
+}
+
+.lgbtqia-main-text[data-result-active="true"] {
+    display: none;
+}
+
+.lgbtqia-btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lgbtqia-btn-container[data-result-active="true"] {
+    display: none;
+}
+
+.lgbtqia-btn-container button,
+.lgbtqia-result-container .btn-container button {
+    background: var(--primary-color);
+    border: none;
+    border-radius: 1em;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 0.5em 2em;
+    transition: all 0.2s ease-in-out;
+    z-index: 1;
+}
+
+.lgbtqia-result-container[data-result-active="true"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff88;
+    padding: 2em 4em;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin: 1em auto;
+    gap: 2em;
+    width: min(1200px, var(--max-width));
+}
+
+.lgbtqia-result-container[data-result-active="true"] .text-container {
+    text-align: left;
+}
+
+.lgbtqia-result-container[data-result-active="true"] .text-container .btn-container {
+    text-align: right;
+}
+
+.lgbtqia-result-container[data-result-active="false"] {
+    display: none;
+}
+
+/* flipable card css */
+
+.lgbtqia-result-container .card-container .card {
+    --card-border-radius: 1.5em;
+    --result-card-height: calc(var(--card-height) * 2);
+    height: var(--result-card-height, 300px);
+    width: calc(var(--result-card-height) * 2 / 3);
+    height: var(--result-card-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 600px;
+    background-color: transparent;
+}
+
+.lgbtqia-result-container .card-container .card .card--inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s ease-in-out;
+    position: relative;
+    transform-style: preserve-3d;
+    box-shadow: 0px 10px 15px 5px #0004;
+    border: 0;
+    transform: rotateY(0deg);
+    border-radius: var(--card-border-radius, 10px);
+}
+
+.lgbtqia-result-container .card-container .card .card--inner.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.lgbtqia-result-container .card-container .card--face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lgbtqia-result-container .card-container .card--face-front {
+    background: var(--card-bg-url, linear-gradient(black, gray, right)) no-repeat center;
+    background-size: cover;
+}
+
+.lgbtqia-result-container .card-container .card--face-back {
+    transform: rotateY(180deg);
+    background: var(--card-front-img, url(../infographics/interactive-names/cards/the-fool.svg)) no-repeat center;
+    background-size: cover;
+}

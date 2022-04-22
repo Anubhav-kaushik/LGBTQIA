@@ -1,0 +1,36 @@
+:root {
+    --card-height: 150px;
+    --card-bg-url: url(../infographics/interactive-names/card-back.svg);
+    --max-width: calc(100% - 2em);
+}
+
+.lgbtqia-cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: min(1100px, var(--max-width));
+    min-height: calc(var(--card-height) * 1.5);
+    background-color: transparent;
+    position: relative;
+    margin: 0 auto;
+}
+
+.lgbtqia-cards-container[data-result-active="true"] {
+    display: none;
+}
+
+.lgbtqia-cards-container .card {
+    background-image: var(--card-bg-url);
+    background-size: cover;
+    border-radius: 10px;
+    width: calc(var(--card-height) * 2 / 3);
+    height: var(--card-height);
+    border: 0;
+    position: absolute;
+    transition: transform 0.3s ease-in-out, left 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.lgbtqia-cards-container .card:hover {
+    transform: translateY(-20px);
+}

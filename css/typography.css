@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'Verdana';
+    src: url(../infographics/fonts/Verdana.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Verdana Bold';
+    src: url(../infographics/fonts/VerdanaBold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Dancing Script';
+    src: url(../infographics/fonts/DancingScript.ttf) format('truetype');
+}
+
+
+[data-font-family="verdana-regular"] {
+    font-family: 'Verdana';
+    font-weight: 400;
+}
+
+[data-font-family="verdana-bold"] {
+    font-family: 'Verdana Bold';
+    font-weight: bold;
+}
+
+[data-font-family="dancing-script"] {
+    font-family: 'Dancing Script';
+    font-weight: 400;
+}
+
+
+.lgbtqia-subheading h2 {
+    font-size: 2.75em;
+    margin-bottom: 0;
+}
+
+.lgbtqia-subheading h2[data-result-active="true"] {
+    font-size: 2.1em;
+}
+
+.lgbtqia-main-heading h1 {
+    font-size: 4em;
+    margin-top: 0.5em;
+    margin-bottom: 0.2em;
+}
+
+.lgbtqia-main-heading h1[data-result-active="true"] {
+    font-size: 3.5em;
+}
+
+.lgbtqia-main-text p {
+    font-size: 1.2em;
+}
+
+#lgbtqia button {
+    font-size: 1em;
+}
+
+.lgbtqia-result-container h2 {
+    font-size: 4em;
+    margin-top: 0;
+    margin-bottom: 0.2em;
+}
+
+.lgbtqia-result-container p {
+    font-size: 1.1em;
+}
