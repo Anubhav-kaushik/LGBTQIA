@@ -31,6 +31,12 @@
     cursor: pointer;
 }
 
+@media screen and (max-width: 500px) {
+    .lgbtqia-cards-container .card {
+        border: 1px solid gray;
+    }
+}
+
 .lgbtqia-cards-container .card:hover {
     transform: translateY(-20px);
 }

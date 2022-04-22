@@ -30,6 +30,12 @@ body {
     font-size: 16px;
 }
 
+@media (max-width: 700px) {
+    #lgbtqia {
+        font-size: 12px;
+    }
+}
+
 #lgbtqia>* {
     box-sizing: border-box;
 }
@@ -37,7 +43,7 @@ body {
 .lgbtqia-main-container {
     display: block;
     border: 1px solid transparent;
-    padding: 90px 50px;
+    padding: 2em 2em 4em 2em;
     border-image-source: url(../infographics/interactive-names/border.svg);
     border-image-repeat: round;
     border-image-slice: 180;
@@ -55,8 +61,8 @@ body {
 }
 
 .lgbtqia-header img {
-    max-height: 92px;
-    z-index: 1;
+    height: min(80%, 3vw);
+    width: min(50vw, 200px);
 }
 
 .lgbtqia-text-container {
@@ -138,6 +144,16 @@ body {
     text-align: right;
 }
 
+@media screen and (max-width: 700px) {
+    .lgbtqia-result-container[data-result-active="true"] .text-container .btn-container {
+        text-align: center;
+    }
+    
+    .lgbtqia-result-container[data-result-active="true"] {
+        padding: 2em;
+    }
+}
+
 .lgbtqia-result-container[data-result-active="false"] {
     display: none;
 }
@@ -146,7 +162,7 @@ body {
 
 .lgbtqia-result-container .card-container .card {
     --card-border-radius: 1.5em;
-    --result-card-height: calc(var(--card-height) * 3);
+    --result-card-height: min(calc(var(--card-height) * 3), 80vw);
     height: var(--result-card-height, 300px);
     width: calc(var(--result-card-height) * 60 / 103);
     height: var(--result-card-height);
@@ -209,11 +225,6 @@ body {
 
 @media (max-width:1200px) {
     .lgbtqia-main-container {
-        display: block;
-        border: 1px solid transparent;
-        padding: 72px 40px;
-        border-image-source: url(../infographics/interactive-names/border.svg);
-        border-image-repeat: round;
         border-image-slice: 178;
         border-image-width: 228px;
     }
@@ -222,16 +233,26 @@ body {
 @media (max-width:1024px) {
     .lgbtqia-result-container[data-result-active="true"] {
         flex-direction: column;
-
     }
 
     .lgbtqia-main-container {
-        display: block;
-        border: 1px solid transparent;
-        padding: 72px 40px;
-        border-image-source: url(../infographics/interactive-names/border.svg);
-        border-image-repeat: round;
         border-image-slice: 140;
         border-image-width: 190px;
     }
+}
+
+@media screen and (max-width: 500px) {
+    .lgbtqia-main-container {
+        border-image-slice: 100;
+    }    
+}
+
+@media screen and (max-width: 400px) {
+    .lgbtqia-main-heading h1 {
+        font-size: 2.5em;
+    }
+    
+    .lgbtqia-subheading h2 {
+        font-size: 1.5em;
+    }  
 }
