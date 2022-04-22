@@ -85,7 +85,7 @@ const data = {
             'p1': "A change is on the way, one that will benefit you. Many times, those of us in the LGBTQIA+ community have had to make our own luck, but the energy of the Wheel of Fortune says the odds have just tilted in our direction or are about to. Maybe local media gives positive attention to a social justice cause you are passionate about, resulting in more support. Maybe your dream of bringing art that uplifts the LGBTQIA+ community gets better than hoped for support through crowd funding or attracts the attention of people with the additional resources to make your dream a reality. Whatever it is, keep your eyes open and move on it as quickly as possible. You need to be adaptable to take full advantage of it. The window of opportunity can close as quickly as it was opened.",
             'p2': "The adaptable aspect of the Wheel of Fortune's energy also resonates with the genderfluid and genderqueer members of our community. You may find that labels and strict definitions choke your identity rather than free you to be who you are. Investigate if your truth is better expressed without them and allow yourself to adapt and flow with the turning of your own inner wheel."
         },
-        'image-link': "infographics/interactive-names/cards/the-wheel-of-fortune.svg"
+        'image-link': "infographics/interactive-names/cards/the-wheel-of-fortune.png"
     },
     12: {
         'name': 'Justice',
